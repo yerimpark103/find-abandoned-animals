@@ -1,4 +1,4 @@
-import {Breadcrumb, Tag} from "antd";
+import {Breadcrumb, Tag, Tooltip} from "antd";
 import {faPaw, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -69,18 +69,20 @@ export default function AnimalDetailUI(props: AnimalDetailUIProps) {
             <AnimalDetailText>{props.animal.specialMark}</AnimalDetailText>
             <AnimalDetailText>
               {props.animal.careNm}
-              <PhoneNumber
-                style={{marginLeft: "0.5rem"}}
-                onClick={() => {
-                  props.handleClickPhoneNumber(props.animal.careTel);
-                }}
-              >
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  style={{marginRight: "0.25rem"}}
-                />
-                {props.animal.careTel}
-              </PhoneNumber>
+              <Tooltip title="전화번호를 복사하려면 클릭">
+                <PhoneNumber
+                  style={{marginLeft: "0.5rem"}}
+                  onClick={() => {
+                    props.handleClickPhoneNumber(props.animal.careTel);
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    style={{marginRight: "0.25rem"}}
+                  />
+                  {props.animal.careTel}
+                </PhoneNumber>
+              </Tooltip>
             </AnimalDetailText>
           </AnimalDetailTextContainer>
         </AnimalDetailContainer>
