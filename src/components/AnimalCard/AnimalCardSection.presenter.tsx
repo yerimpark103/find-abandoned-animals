@@ -5,7 +5,7 @@ import AnimalCardUI from "./AnimalCard.presenter";
 interface AnimalCardSectionProps {
   animalData: any;
   convertAnimalSexCdToString: (code: string) => string;
-  convertAnimalNeuterCdToString: (code: string) => string;
+  convertAnimalNeuterYnToString: (code: string) => string;
   handleClickNavigateToDetailPage: (val: any) => any;
 }
 
@@ -18,8 +18,8 @@ export default function AnimalCardSectionUI(props: AnimalCardSectionProps) {
             <AnimalCardUI
               animal={animal}
               convertAnimalSexCdToString={props.convertAnimalSexCdToString}
-              convertAnimalNeuterCdToString={
-                props.convertAnimalNeuterCdToString
+              convertAnimalNeuterYnToString={
+                props.convertAnimalNeuterYnToString
               }
               handleClickNavigateToDetailPage={
                 props.handleClickNavigateToDetailPage

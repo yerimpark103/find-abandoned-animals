@@ -1,8 +1,11 @@
-import {HashArray} from "@/types/global.types";
 import axios from "axios";
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 import AnimalCardSectionUI from "./AnimalCardSection.presenter";
+import {
+  convertAnimalSexCdToString,
+  convertAnimalNeuterYnToString,
+} from "@/util/animalDataFormatter";
 
 const PAGE_NUM = 1;
 const NUM_ROWS = 20;
@@ -20,16 +23,6 @@ export default function AnimalCard() {
     });
   }, []);
 
-  const convertAnimalSexCdToString = (code: string): string => {
-    const legend: HashArray = {M: "수컷", F: "암컷", Q: "성별 불명"};
-    return legend[code];
-  };
-
-  const convertAnimalNeuterCdToString = (code: string): string => {
-    const legend: HashArray = {Y: "중성화 O", N: "중성화 X", U: "중성화 불명"};
-    return legend[code];
-  };
-
   const handleClickNavigateToDetailPage = (val: any) => {
     console.log("clicked", val);
     setSelectedAnimal(val);
@@ -45,7 +38,7 @@ export default function AnimalCard() {
       <AnimalCardSectionUI
         animalData={animalData}
         convertAnimalSexCdToString={convertAnimalSexCdToString}
-        convertAnimalNeuterCdToString={convertAnimalNeuterCdToString}
+        convertAnimalNeuterYnToString={convertAnimalNeuterYnToString}
         handleClickNavigateToDetailPage={handleClickNavigateToDetailPage}
       />
     </>
