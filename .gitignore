@@ -30,3 +30,15 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+next-env.d.ts
+
+# db related code
+codegen.yaml
+
+# linter, formatter
+.eslintignore
+.eslintrc.js
+.eslintrc.json
+.prettierrc
+tsconfig.json
