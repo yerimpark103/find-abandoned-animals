@@ -42,3 +42,6 @@ codegen.yaml
 .eslintrc.json
 .prettierrc
 tsconfig.json
+
+# dotenv file
+.env
