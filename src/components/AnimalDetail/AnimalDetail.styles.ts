@@ -6,18 +6,20 @@ export const AnimalDetailCard = styled.div`
   margin-top: 2rem;
   padding: unset !important;
   width: 100%;
+  height: 24rem;
   border: 1px solid #efefef;
   border-radius: 0.5rem;
 `;
 
 export const AnimalDetailImg = styled.img`
-  width: 24rem;
-  height: 24rem;
+  width: 50%;
+  max-height: 28rem;
   object-fit: cover;
   border-radius: 0.5rem 0 0 0.5rem;
 `;
 
 export const AnimalDetailContainer = styled.div`
+  width: 50%;
   padding: 2rem 1rem;
 `;
 
