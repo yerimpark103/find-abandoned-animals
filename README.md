@@ -8,3 +8,4 @@
 <img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 레이아웃 세팅을 사용자의 윈도우 사이즈에 맞게 조정했습니다.
 
 #### 23/03/28
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 리스트형 게시글을 만들었습니다.
