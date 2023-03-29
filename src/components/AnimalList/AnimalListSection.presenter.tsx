@@ -14,7 +14,7 @@ export default function AnimalListSectionUI(props: AnimalListSectionProps) {
     <>
       <Row gutter={[16, 16]}>
         {props.animalData?.map((animal: any) => (
-          <Col key={animal.noticeNo} className="gutter-row" span={12}>
+          <Col key={animal.noticeNo} className="gutter-row" span={24}>
             <AnimalListUI
               animal={animal}
               convertAnimalSexCdToString={props.convertAnimalSexCdToString}
