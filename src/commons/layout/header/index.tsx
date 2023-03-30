@@ -1,14 +1,12 @@
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {Col, Row, Modal, Button} from "antd";
+import {Modal, Button} from "antd";
 import LoginForm from "@/components/units/LoginForm";
 import SignupForm from "@/components/units/SignupForm";
 
 const Wrapper = styled.div`
+  width: 100%;
   height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export default function LayoutHeader() {
@@ -24,11 +22,21 @@ export default function LayoutHeader() {
   };
   return (
     <Wrapper>
-      <Row style={{width: "100%", margin: "0 auto"}}>
-        <Col span={6}></Col>
-        <Col span={12}>유기동물보호센터</Col>
-        <Col span={6}>
-          <Button onClick={loginModal}>로그인</Button>
+      <div
+        style={{
+          width: "100%",
+          height: "5rem",
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+        }}
+      >
+        <h1>유기동물보호센터</h1>
+        <div>
+          <Button onClick={loginModal} style={{marginRight: "0.5rem"}}>
+            로그인
+          </Button>
           {openLogin && (
             <Modal
               open={true}
@@ -50,8 +58,8 @@ export default function LayoutHeader() {
               <SignupForm />
             </Modal>
           )}
-        </Col>
-      </Row>
+        </div>
+      </div>
     </Wrapper>
   );
 }

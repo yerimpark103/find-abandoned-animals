@@ -21,7 +21,7 @@ export default function APITestPage() {
     return legend[code];
   };
 
-  const convertAnimalNeuterCdToString = (code: string): string => {
+  const convertAnimalNeuterYnToString = (code: string): string => {
     const legend: HashArray = {Y: "중성화 O", N: "중성화 X", U: "중성화 불명"};
     return legend[code];
   };
@@ -39,7 +39,7 @@ export default function APITestPage() {
           <span>{animal.age}</span>
           <span>
             {convertAnimalSexCdToString(animal.sexCd)}(
-            {convertAnimalNeuterCdToString(animal.neuterYn)})
+            {convertAnimalNeuterYnToString(animal.neuterYn)})
           </span>
           <span>{animal.careNm}</span>
         </div>
