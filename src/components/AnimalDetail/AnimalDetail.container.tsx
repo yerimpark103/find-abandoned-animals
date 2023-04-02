@@ -5,7 +5,6 @@ import AnimalDetailUI from "./AnimalDetail.presenter";
 export default function AnimalDetail() {
   const router = useRouter();
   const animal = {...router.query};
-  console.log(animal);
 
   const handleClickPhoneNumber = (phoneNumber: string | any) => {
     if (typeof window !== "undefined") {
@@ -14,11 +13,16 @@ export default function AnimalDetail() {
     }
   };
 
+  const handleClickGoBackRoute = () => {
+    router.back();
+  };
+
   return (
     <>
       <AnimalDetailUI
         animal={animal}
         handleClickPhoneNumber={handleClickPhoneNumber}
+        handleClickGoBackRoute={handleClickGoBackRoute}
       />
     </>
   );
