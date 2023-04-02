@@ -55,6 +55,14 @@ export default function AnimalList() {
       title: "발견날짜",
       dataIndex: "happenDt",
       key: "happenDt",
+      render: (text: string | undefined) => (
+        <span>
+          {`${text?.substring(0, 4)}.${text?.substring(4, 6)}.${text?.substring(
+            6,
+            8
+          )}`}
+        </span>
+      ),
     },
   ];
 
