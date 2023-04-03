@@ -1,3 +1,36 @@
+## 소개
+유기동물을 확인할 수 있는 웹 어플리케이션입니다.
+
+### 기능
+1. 유기동물 리스트
+2. 각 동물 별 상세페이지 
+3. geolocation 베이스로 사용자 주변 유기동물 조회하기
+4. 보호소에 후원금 송금
+
+### 사용 기술
+- next.js
+- React
+- Typescript
+- Axios
+- GraphQL
+- Styled Components
+- Emotion
+- Ant design
+- React Infinite Scroller
+
+- [농림축산식품부 농림축산검역본부_동물보호관리시스템 유기동물 정보 조회 서비스](https://www.data.go.kr/data/15098931/openapi.do)
+
+### 설치 및 실행방법
+
+```bash
+yarn install
+```
+
+```bash
+yarn dev
+```
+
+
 ## 개발노트
 
 #### 23/03/27 
