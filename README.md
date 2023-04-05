@@ -1,3 +1,36 @@
+## 소개
+유기동물을 확인할 수 있는 웹 어플리케이션입니다.
+
+### 기능
+1. 유기동물 리스트
+2. 각 동물 별 상세페이지 
+3. geolocation 베이스로 사용자 주변 유기동물 조회하기
+4. 보호소에 후원금 송금
+
+### 사용 기술
+- next.js
+- React
+- Typescript
+- Axios
+- GraphQL
+- Styled Components
+- Emotion
+- Ant design
+- React Infinite Scroller
+
+- [농림축산식품부 농림축산검역본부_동물보호관리시스템 유기동물 정보 조회 서비스](https://www.data.go.kr/data/15098931/openapi.do)
+
+### 설치 및 실행방법
+
+```bash
+yarn install
+```
+
+```bash
+yarn dev
+```
+
+
 ## 개발노트
 
 #### 23/03/27 
@@ -14,3 +47,6 @@
 <img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> [ant design card](https://ant.design/components/card)와 `useState` 훅을 이용하여 Pagination 가능한 카드 뷰를 구현하였습니다.
 
 next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상세 페이지로 이동 가능하게 구현했습니다.
+
+#### 23/04/02
+<img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 리스트형 게시글의 UX를 개선하였습니다. 사용자에게 필요한 정보를 노출했습니다.
