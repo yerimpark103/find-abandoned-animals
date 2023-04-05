@@ -10,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {/* Show list view page as default page */}
         <ListViewPage />
       </main>
     </>
