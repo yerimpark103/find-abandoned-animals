@@ -1,5 +1,5 @@
 import {Col, Row} from "antd";
-import PaginationUI from "../Pagination/Pagination.presenter";
+import PaginationUI from "../../Pagination/Pagination.presenter";
 
 import AnimalCardUI from "./AnimalCard.presenter";
 

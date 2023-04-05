@@ -1,5 +1,5 @@
 import Head from "next/head";
-import ListViewPage from "./list-view";
+import LostAnimalsPage from "./lost-animals";
 export default function Home() {
   return (
     <>
@@ -10,8 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* Show list view page as default page */}
-        <ListViewPage />
+        <LostAnimalsPage />
       </main>
     </>
   );
