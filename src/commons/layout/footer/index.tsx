@@ -2,9 +2,14 @@ import styled from "@emotion/styled";
 
 const Wrapper = styled.div`
   height: 3rem;
-  background-color: #e2e2e2;
 `;
 
 export default function LayoutFooter() {
-  return <Wrapper>footer</Wrapper>;
+  return (
+    <Wrapper>
+      <small style={{float: "right", marginRight: "2rem"}}>
+        Developed by Yerim Park and Sehwan Kim. 2023
+      </small>
+    </Wrapper>
+  );
 }
