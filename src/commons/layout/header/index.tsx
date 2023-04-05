@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import {Modal, Button} from "antd";
 import LoginForm from "@/components/units/LoginForm";
 import SignupForm from "@/components/units/SignupForm";
+import {useRouter} from "next/router";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -10,6 +11,7 @@ const Wrapper = styled.div`
 `;
 
 export default function LayoutHeader() {
+  const router = useRouter();
   const [openLogin, setOpenLogin] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
 
@@ -20,6 +22,11 @@ export default function LayoutHeader() {
   const signUpModal = () => {
     setOpenSignUp((prev) => !prev);
   };
+
+  const handleClickLogo = () => {
+    void router.push("/");
+  };
+
   return (
     <Wrapper>
       <div
@@ -32,7 +39,9 @@ export default function LayoutHeader() {
           alignItems: "center",
         }}
       >
-        <h1>유기동물보호센터</h1>
+        <h1 onClick={handleClickLogo} style={{cursor: "pointer"}}>
+          유기동물보호센터
+        </h1>
         <div>
           <Button onClick={loginModal} style={{marginRight: "0.5rem"}}>
             로그인

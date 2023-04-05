@@ -20,6 +20,7 @@ import {
 interface AnimalDetailUIProps {
   animal: any;
   handleClickPhoneNumber: (phoneNumber: string | any) => void;
+  handleClickGoBackRoute: () => void;
 }
 
 export default function AnimalDetailUI(props: AnimalDetailUIProps) {
@@ -28,9 +29,13 @@ export default function AnimalDetailUI(props: AnimalDetailUIProps) {
       <Breadcrumb
         items={[
           {
-            // TODO: use onClick={() => router.back()}
             href: "/",
-            title: <FontAwesomeIcon icon={faPaw} />,
+            title: (
+              <FontAwesomeIcon
+                icon={faPaw}
+                onClick={props.handleClickGoBackRoute}
+              />
+            ),
           },
           {
             title: `${props.animal.chargeNm} : ${props.animal.kindCd}`,
