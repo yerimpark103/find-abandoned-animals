@@ -7,7 +7,7 @@ import {viewTypeState} from "@/commons/store";
 import {faBorderAll, faList} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useState} from "react";
-import Filter from "@/components/Common/Filter.container";
+import Filter from "@/components/Common/Filter/Filter.container";
 
 export default function LostAnimalsPage() {
   const [defaultView, setDefaultView] = useRecoilState(viewTypeState);
