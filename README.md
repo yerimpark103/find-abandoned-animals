@@ -56,4 +56,4 @@ next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상�
 리스트/카드 뷰를 오갈 수 있는 버튼을 추가해 UX를 개선했습니다.
 
 #### 23/04/07
-<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 로그인 기능, withAuth, localstorage를 통한 페이지별 접근 관리 기능(이후 refresh로 변경예정), 로그인 모달, 회원가입 모달 => 페이지로 변경.
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 로그인 기능, withAuth, localstorage를 통한 페이지별 접근 관리 기능(이후 refresh로 변경예정), 브라우저 새로고침할때 토큰 확인하여 로그인 유지시키는 기능, 로그인 모달 및 회원가입 모달 => 페이지로 변경.
