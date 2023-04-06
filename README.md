@@ -54,3 +54,6 @@ next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상�
 #### 23/04/05
 <img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 필터 기능을 구현하였습니다. [ant design dropdown](https://ant.design/components/dropdown), [ant design select](https://ant.design/components/select)에 커스텀 UI를 접목하여 사용자가 선택한 필터로 api 쿼리를 할 수 있게 제공하였습니다.<br/>
 리스트/카드 뷰를 오갈 수 있는 버튼을 추가해 UX를 개선했습니다.
+
+#### 23/04/07
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 로그인 기능, withAuth, localstorage를 통한 페이지별 접근 관리 기능(이후 refresh로 변경예정), 로그인 모달, 회원가입 모달 => 페이지로 변경.
