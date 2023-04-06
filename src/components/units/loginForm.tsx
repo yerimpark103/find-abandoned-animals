@@ -43,24 +43,26 @@ export default function LoginForm() {
 
   const onClickLogin = async () => {
     try {
-      const reuslt = await loginUser({
-          variables: {
-              email,
-              password
-          },
-      })
-      const accessToken = reuslt.data?.loginUser.accessToken;
-      console.log(accessToken);
-      if(!accessToken) {
-          console.error("로그인에 실패")
-      }
-      setAccessToken(accessToken);
+        const reuslt = await loginUser({
+            variables: {
+                email,
+                password
+            },
+        })
+        const accessToken = reuslt.data?.loginUser.accessToken;
+        console.log(accessToken);
+        if(!accessToken) {
+            console.error("로그인에 실패")
+        }
+        setAccessToken(accessToken);
+        localStorage.setItem("accessToken", accessToken);
 
-      void router.push("/");
-  } catch (error) {
-      console.log(error);
-  }
-  };
+        void router.push("/");
+
+    } catch (error) {
+        console.log(error);
+    }
+}
 
   return (
     <Wrapper>
