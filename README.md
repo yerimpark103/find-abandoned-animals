@@ -50,3 +50,7 @@ next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상�
 
 #### 23/04/02
 <img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 리스트형 게시글의 UX를 개선하였습니다. 사용자에게 필요한 정보를 노출했습니다.
+
+#### 23/04/05
+<img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 필터 기능을 구현하였습니다. [ant design dropdown](https://ant.design/components/dropdown), [ant design select](https://ant.design/components/select)에 커스텀 UI를 접목하여 사용자가 선택한 필터로 api 쿼리를 할 수 있게 제공하였습니다.<br/>
+리스트/카드 뷰를 오갈 수 있는 버튼을 추가해 UX를 개선했습니다.
