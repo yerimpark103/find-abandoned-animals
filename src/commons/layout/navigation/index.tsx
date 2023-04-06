@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {useRouter} from "next/router";
+// import {useRouter} from "next/router";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -24,24 +24,16 @@ const Menu1 = styled.div`
 `;
 
 export default function LayoutMenu1() {
-  const router = useRouter();
-
-  const handleClickListViewMenu = () => {
-    void router.push("/");
-  };
-
-  const handleClickCardViewMenu = () => {
-    void router.push("/card-view");
-  };
+  // const router = useRouter();
 
   return (
     <Wrapper>
       <UlWrapper>
         <LiWrapper>
-          <Menu1 onClick={handleClickListViewMenu}>리스트로 보기</Menu1>
+          <Menu1>메뉴</Menu1>
         </LiWrapper>
         <LiWrapper>
-          <Menu1 onClick={handleClickCardViewMenu}>카드로 보기</Menu1>
+          <Menu1>메뉴</Menu1>
         </LiWrapper>
       </UlWrapper>
     </Wrapper>

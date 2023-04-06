@@ -18,7 +18,8 @@ export default function Layout(props: ILayoutProps) {
       }}
     >
       <LayoutHeader />
-      <LayoutMenu />
+      <hr />
+      {/* <LayoutMenu /> */}
       <div style={{flex: "1", padding: "2rem"}}>
         <div>{props.children}</div>
       </div>

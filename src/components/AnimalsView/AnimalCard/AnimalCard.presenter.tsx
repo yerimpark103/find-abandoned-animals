@@ -1,11 +1,5 @@
 import {AnimalCard, AnimalImg, AnimalTag} from "./AnimalCard.styles";
-
-interface AnimalCardProps {
-  animal: any;
-  convertAnimalSexCdToString: (code: string) => string;
-  convertAnimalNeuterYnToString: (code: string) => string;
-  handleClickNavigateToDetailPage: (val: any) => any;
-}
+import {AnimalCardProps} from "./AnimalCard.types";
 
 export default function AnimalCardUI(props: AnimalCardProps) {
   return (
