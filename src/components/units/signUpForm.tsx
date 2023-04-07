@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from "react";
 import {Form, Input, Checkbox, Button} from "antd";
+import styled from "@emotion/styled";
 
 export default function SignupForm() {
   // 필요한 기능 : 로그인시 해당 페이지 접속 불가하게
@@ -49,8 +50,12 @@ export default function SignupForm() {
     console.log(email, nickname, password);
   }, [email, password, passwordCheck, term]);
 
+  const Wrapper = styled.div`
+    width: 500px;
+  `
+
   return (
-    <>
+    <Wrapper>
       <Form onFinish={onSubmit} style={{padding: 10}}>
         <div>
           <label htmlFor="user-email">아이디</label>
@@ -112,6 +117,6 @@ export default function SignupForm() {
           </Button>
         </div>
       </Form>
-    </>
+    </Wrapper>
   );
 }
