@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { accessTokenState } from "@/commons/store";
 import { useMutation } from "@apollo/client";
-import LoginFormUI from "./loginForm.presenter";
 import { LOGIN_USER } from "./loginForm.query";
+import LoginFormUI from "./loginForm.presenter";
 
 export default function LoginForm() {
   const router = useRouter();

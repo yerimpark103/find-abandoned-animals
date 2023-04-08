@@ -1,7 +1,10 @@
 import React from "react";
-import {Input, Button} from "antd";
+import {Input, Button, InputProps} from "antd";
 import { Wrapper, FormWrapper, ButtonWrapper } from "./loginForm.styles";
 
+// interface LoginProps {
+// 타입만들기
+// }
 
 export default function LoginFormUI(props: any) {
   return (
