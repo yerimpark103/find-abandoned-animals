@@ -49,27 +49,30 @@ export default function SignupForm() {
   };
 
   const onClickSubmit = async () => {
-    if (password !== passwordCheck) {
-      setPasswordError(true);
-      return;
-    }
-    if (!term) {
-      setTermError(true);
-      return;
-    }
-
-    const result = await createUser({
-      variables: {
-        createUserInput: {
-          email: email,
-          name: name,
-          password: password,
-        }
+    try {
+      if (password !== passwordCheck) {
+        setPasswordError(true);
+        return;
       }
-    });
-    alert("가입이 완료되었습니다.");
-    router.push("/");
-
+      if (!term) {
+        setTermError(true);
+        return;
+      }
+  
+      const result = await createUser({
+        variables: {
+          createUserInput: {
+            email: email,
+            name: name,
+            password: password,
+          }
+        }
+      });
+      alert("가입이 완료되었습니다.");
+      router.push("/");
+    } catch (error) {
+      alert(error)
+    }
   };
 
   return (
