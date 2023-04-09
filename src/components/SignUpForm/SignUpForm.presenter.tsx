@@ -18,7 +18,7 @@ export default function SignUpFormUI(props: any) {
           />
         </div>
         <div>
-          <label htmlFor="user-name">닉네임</label>
+          <label htmlFor="user-name">이름</label>
           <br />
           <Input
             name="user-name"
