@@ -28,7 +28,7 @@ export default function LostAnimalsPage() {
         }}
       >
         <h3>유기동물 리스트</h3>
-        <span style={{display: "flex", gap: "0.5rem"}}>
+        <span style={{display: "flex", gap: "0.5rem", alignItems: "center"}}>
           <Filter setAppliedFilter={setAppliedFilter} />
           <Radio.Group value={defaultView} onChange={handleChangeViewType}>
             <Radio.Button value="list">

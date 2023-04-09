@@ -18,7 +18,6 @@ export default function AnimalList(props: IAnimalFilterProps) {
   const [totalPageCount, setTotalPageCount] = useState(1);
   const lastPage = totalPageCount ? Math.ceil(totalPageCount / 20) : 0;
   const baseURL = `http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=${process.env.NEXT_PUBLIC_DATA_GO_KR_API_KEY}&pageNo=${currentPage}&numOfRows=${NUM_ROWS}${props.appliedFilter}&_type=json`;
-  // const baseURL = `http://apis.data.go.kr/1543061/abandonmentPublicSrvc/sigungu?serviceKey=${process.env.NEXT_PUBLIC_DATA_GO_KR_API_KEY}&upr_cd=6480000&numOfRows=1000${props.appliedFilter}&_type=json`;
 
   const columns: TableColumnsType<IAnimalListDataType> = [
     {

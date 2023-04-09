@@ -11,7 +11,11 @@ export interface FilterUIProps {
   filterConditions: string[];
   filterableColumns: DefaultOptionType[] | undefined;
   handleChangeSelectColumn:
-    | ((value: any, option: DefaultOptionType | DefaultOptionType[]) => void)
+    | ((
+        value: any,
+        option: DefaultOptionType | DefaultOptionType[],
+        index: number
+      ) => void)
     | undefined;
   filterOptionsByColumn: DefaultOptionType[] | undefined;
   handleChangeSelectOption:
@@ -21,11 +25,18 @@ export interface FilterUIProps {
 }
 
 export interface FilterConditionUIProps {
+  selectedCondition: any;
+  key: number;
+  index: number;
   filterConditions: string[];
   handleDeleteFilter: MouseEventHandler<SVGSVGElement> | undefined;
   filterableColumns: DefaultOptionType[] | undefined;
   handleChangeSelectColumn:
-    | ((value: any, option: DefaultOptionType | DefaultOptionType[]) => void)
+    | ((
+        value: any,
+        option: DefaultOptionType | DefaultOptionType[],
+        index: number
+      ) => void)
     | undefined;
   filterOptionsByColumn: DefaultOptionType[] | undefined;
   handleChangeSelectOption:

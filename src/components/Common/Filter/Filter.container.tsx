@@ -1,6 +1,6 @@
 import {getSigunguBySido, sidoList, sigunguList} from "@/util/locationData";
 import {theme} from "antd";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FilterUI from "./Filter.presenter";
 import {IFilterProps} from "./Filter.types";
 import _ from "lodash";
@@ -49,25 +49,28 @@ export default function Filter(props: IFilterProps) {
 
   const themeToken = {...theme.useToken().token};
 
-  const handleChangeSelectColumn = (value: string) => {
+  const handleChangeSelectColumn = (value: string, _: any, index: number) => {
     const selectedColumn = filterableColumns.find(
       (column) => column.value === value
     );
     if (selectedColumn) {
       const selectedColumnIndex = filterableColumns.indexOf(selectedColumn);
-
       filterableColumns[selectedColumnIndex].disabled = true;
     }
     setFilterColumn(value);
     const newFilterConditions = [...filterConditions];
-    const tempCondition = newFilterConditions.find(
-      (condition) => condition.key === "new"
-    );
+
+    const tempCondition = newFilterConditions[index];
+    if (tempCondition.key !== value) tempCondition.value = null;
     tempCondition.key = value;
+
     const options = filterOptions.find(
       (option) => option.column === value
     )?.options;
-    if (options) setFilterOptionsByColumn(options);
+
+    if (options) {
+      setFilterOptionsByColumn(options);
+    }
   };
 
   const handleChangeSelectOption = (value: string) => {
@@ -77,20 +80,24 @@ export default function Filter(props: IFilterProps) {
     );
     tempCondition.value = value;
     setFilterConditions(newFilterConditions);
+  };
+
+  useEffect(() => {
     let filterQuery = "";
     filterConditions.forEach((condition: {key: any; value: any}) => {
       filterQuery += `&${condition.key}=${condition.value}`;
     });
     props.setAppliedFilter(filterQuery);
-  };
+  }, [filterConditions]);
 
   const handleDeleteFilter = (index: number) => {
-    if (filterConditions.length === 1) setFilterConditions([]);
-    else setFilterConditions(_.pullAt(filterConditions, [index]));
+    const tempFilterConditions = [...filterConditions];
+    _.pullAt(tempFilterConditions, [index]);
+    setFilterConditions(tempFilterConditions);
   };
 
   const handleAddFilter = () => {
-    setFilterConditions((prev: any[]) => [...prev, {key: "new", value: ""}]);
+    setFilterConditions((prev: any[]) => [...prev, {key: null, value: null}]);
   };
 
   return (
