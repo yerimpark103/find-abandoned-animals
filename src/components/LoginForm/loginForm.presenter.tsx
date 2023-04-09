@@ -1,5 +1,5 @@
 import React from "react";
-import {Input, Button, InputProps} from "antd";
+import {Input, Button} from "antd";
 import { Wrapper, FormWrapper, ButtonWrapper } from "./loginForm.styles";
 
 // interface LoginProps {
