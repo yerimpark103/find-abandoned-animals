@@ -62,3 +62,6 @@ next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상�
 
 #### 23/04/08
 <img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> LoginForm, SignUpForm -> container, presenter 구조로 변경
+
+#### 23/04/09
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 회원가입 기능, 페이지 추가
