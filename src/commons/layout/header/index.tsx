@@ -1,32 +1,40 @@
-import {useState} from "react";
+import { gql, useQuery } from "@apollo/client";
 import styled from "@emotion/styled";
-import {Modal, Button} from "antd";
-import LoginForm from "@/components/units/LoginForm";
-import SignupForm from "@/components/units/SignupForm";
-import {useRouter} from "next/router";
+import {Button} from "antd";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   width: 100%;
   height: 5rem;
 `;
 
+const FETCH_USER_LOGGED_IN = gql`
+    query fetchUserLoggedIn {
+        fetchUserLoggedIn {
+            _id
+            email
+            name
+        }
+    }
+`
+
 export default function LayoutHeader() {
-  const router = useRouter();
-  const [openLogin, setOpenLogin] = useState(false);
-  const [openSignUp, setOpenSignUp] = useState(false);
+  const [info, setInfo] = useState(false);
+  // const { data } = useQuery(FETCH_USER_LOGGED_IN);
+  
+  useEffect(() => {
+    if(localStorage.getItem("accessToken")) {
+        setInfo(true);
+    }; 
+  });
 
-  const loginModal = () => {
-    setOpenLogin((prev) => !prev);
-  };
-
-  const signUpModal = () => {
-    setOpenSignUp((prev) => !prev);
-  };
-
-  const handleClickLogo = () => {
-    void router.push("/");
-  };
-
+  const onClickLogout = () => {
+    localStorage.removeItem("accessToken")
+    setInfo(false);
+  }
+  
   return (
     <Wrapper>
       <div
@@ -39,34 +47,22 @@ export default function LayoutHeader() {
           alignItems: "center",
         }}
       >
-        <h1 onClick={handleClickLogo} style={{cursor: "pointer"}}>
-          유기동물보호센터
-        </h1>
+        <Link href="/"><h1 style={{cursor: "pointer"}}>유기동물보호센터</h1></Link>
         <div>
-          <Button onClick={loginModal} style={{marginRight: "0.5rem"}}>
-            로그인
-          </Button>
-          {openLogin && (
-            <Modal
-              open={true}
-              onOk={loginModal}
-              onCancel={loginModal}
-              footer={[]}
-            >
-              <LoginForm />
-            </Modal>
-          )}
-          <Button onClick={signUpModal}>회원가입</Button>
-          {openSignUp && (
-            <Modal
-              open={true}
-              onOk={signUpModal}
-              onCancel={signUpModal}
-              footer={[]}
-            >
-              <SignupForm />
-            </Modal>
-          )}
+          {info
+            ? (
+              <>
+                <Button style={{marginRight: "0.5rem"}} onClick={onClickLogout}>로그아웃</Button>
+                <Link href="/"><Button>마이페이지</Button></Link>
+              </> 
+            ) : (
+              <>
+                <Link href="/login"><Button style={{marginRight: "0.5rem"}}>로그인</Button></Link>
+                <Link href="/signup"><Button>회원가입</Button></Link>
+              </>
+            )
+          }
+          
         </div>
       </div>
     </Wrapper>

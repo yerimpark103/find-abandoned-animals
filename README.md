@@ -57,3 +57,8 @@ next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상�
 
 #### 23/04/06
 <img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> Github Pages를 통한 deploy를 적용중입니다.
+#### 23/04/07
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 로그인 기능, withAuth, localstorage를 통한 페이지별 접근 관리 기능(이후 refresh로 변경예정), 브라우저 새로고침할때 토큰 확인하여 로그인 유지시키는 기능, 로그인 모달 및 회원가입 모달 => 페이지로 변경.
+
+#### 23/04/08
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> LoginForm, SignUpForm -> container, presenter 구조로 변경
