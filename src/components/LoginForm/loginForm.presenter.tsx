@@ -1,6 +1,6 @@
 import React from "react";
 import {Input, Button} from "antd";
-import { Wrapper, FormWrapper, ButtonWrapper } from "./loginForm.styles";
+import { ButtonWrapper, FormWrapper, Wrapper } from "./LoginForm.styles";
 
 // interface LoginProps {
 // 타입만들기

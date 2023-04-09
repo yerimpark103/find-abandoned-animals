@@ -5,7 +5,7 @@ import { Wrapper } from "./SignUpForm.styles";
 export default function SignUpFormUI(props: any) {
   return (
     <Wrapper>
-      <Form onFinish={props.onSubmit} style={{padding: 10}}>
+      <Form onFinish={props.onClickSubmit} style={{padding: 10}}>
         <div>
           <label htmlFor="user-email">아이디</label>
           <br />
@@ -18,12 +18,12 @@ export default function SignUpFormUI(props: any) {
           />
         </div>
         <div>
-          <label htmlFor="user-nick">닉네임</label>
+          <label htmlFor="user-name">닉네임</label>
           <br />
           <Input
-            name="user-nick"
-            value={props.nickname}
-            onChange={props.onChangeNick}
+            name="user-name"
+            value={props.name}
+            onChange={props.onChangeName}
             required
           />
         </div>
