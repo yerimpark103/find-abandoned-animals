@@ -1,4 +1,4 @@
-import {getSigunguBySido, sidoList, sigunguList} from "@/util/locationData";
+import {sidoList} from "@/util/locationData";
 import {theme} from "antd";
 import {useEffect, useState} from "react";
 import FilterUI from "./Filter.presenter";
@@ -7,23 +7,46 @@ import _ from "lodash";
 
 export default function Filter(props: IFilterProps) {
   const [filterConditions, setFilterConditions] = useState([] as any);
-  const filterableColumns = [
+  const [filterableColumns, _] = useState([
     {value: "upkind", label: "동물 종류", disabled: false},
     {value: "upr_cd", label: "시/도", disabled: false},
-  ];
+  ]);
 
-  if (
-    filterConditions.find(
-      (condition: {key: string}) => condition.key === "upr_cd"
-    )
-  )
-    filterableColumns.push({value: "org_cd", label: "군/구", disabled: false});
+  /* TODO: 
+  시/도 컬럼 선택 시 군/구 컬럼 추가, 
+  반대로 시/도 컬럼 삭제 시 filterConditions, filterableColumns에 있는 군/구 삭제
+  */
 
-  const sido = filterConditions.find(
-    (condition: {key: string}) => condition.key === "upr_cd"
-  );
+  // const filterableColumns = [
+  //   {value: "upkind", label: "동물 종류", disabled: false},
+  //   {value: "upr_cd", label: "시/도", disabled: false},
+  // ];
 
-  const sigunguListBySido = sido ? getSigunguBySido(sido.value) : sigunguList;
+  // useEffect(() => {
+  //   if (
+  //     filterConditions.find(
+  //       (condition: {key: string}) => condition.key === "upr_cd"
+  //     )
+  //   ) {
+  //     filterableColumns.push({
+  //       value: "org_cd",
+  //       label: "군/구",
+  //       disabled: false,
+  //     });
+  //   } else {
+  //     const tempFilterableColumns = [...filterableColumns];
+  //     _.remove(tempFilterableColumns, (el) => {
+  //       return el.value === "org_cd";
+  //     });
+  //     setFilterableColumns(tempFilterableColumns);
+  //   }
+  // }, [filterConditions]);
+
+  // const sido = filterConditions.find(
+  //   (condition: {key: string}) => condition.key === "upr_cd"
+  // );
+
+  // const sigunguListBySido = sido ? getSigunguBySido(sido.value) : sigunguList;
 
   const filterOptions = [
     {
@@ -38,10 +61,10 @@ export default function Filter(props: IFilterProps) {
       column: "upr_cd",
       options: sidoList,
     },
-    {
-      column: "org_cd",
-      options: sigunguListBySido,
-    },
+    // {
+    //   column: "org_cd",
+    //   options: sigunguListBySido,
+    // },
   ];
 
   const [filterColumn, setFilterColumn] = useState("");

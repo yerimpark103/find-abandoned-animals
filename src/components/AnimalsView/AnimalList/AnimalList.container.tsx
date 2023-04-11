@@ -41,7 +41,7 @@ export default function AnimalList(props: IAnimalFilterProps) {
       title: "동물 종류",
       dataIndex: "kindCd",
       key: "kindCd",
-      width: 100,
+      width: 200,
     },
     {
       title: "상태",
