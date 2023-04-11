@@ -41,7 +41,7 @@ export default function FilterUI(props: FilterUIProps) {
           </DropDownContent>
         )}
       >
-        <ReactiveButton isActive={props.filterConditions.length > 0}>
+        <ReactiveButton isactive={props.filterConditions?.length}>
           <FontAwesomeIcon icon={faFilter} style={{marginRight: "0.5rem"}} />
           필터
         </ReactiveButton>
