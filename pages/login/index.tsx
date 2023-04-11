@@ -1,5 +1,5 @@
-import LoginForm from "@/components/LoginForm/loginForm.container";
+import LoginForm from "@/components/LoginForm/LoginForm.container";
 
-export default function SignUpPage() {
+export default function LoginPage() {
   return <LoginForm />;
 }

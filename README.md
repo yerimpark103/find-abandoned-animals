@@ -1,22 +1,26 @@
 ## 소개
 유기동물을 확인할 수 있는 웹 어플리케이션입니다.
 
+![image](https://user-images.githubusercontent.com/8681323/231220843-13ec2a55-eda9-498c-a0ca-4493788613d6.png)
+
+
 ### 기능
-1. 유기동물 리스트
-2. 각 동물 별 상세페이지 
-3. geolocation 베이스로 사용자 주변 유기동물 조회하기
+1. 유기동물 리스트 ✓
+2. 각 동물별 상세페이지 ✓
+3. geolocation 베이스로 사용자 주변 유기동물 조회하기 
 4. 보호소에 후원금 송금
 
 ### 사용 기술
 - next.js
-- React
+- ReactJS
+- Recoil
 - Typescript
 - Axios
 - GraphQL
 - Styled Components
 - Emotion
 - Ant design
-- React Infinite Scroller
+- Jest
 
 - [농림축산식품부 농림축산검역본부_동물보호관리시스템 유기동물 정보 조회 서비스](https://www.data.go.kr/data/15098931/openapi.do)
 
@@ -57,8 +61,15 @@ next router를 사용해 각 동물 카드를 클릭하면 해당 동물의 상�
 
 #### 23/04/06
 <img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> Github Pages를 통한 deploy를 적용중입니다.
+
 #### 23/04/07
 <img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 로그인 기능, withAuth, localstorage를 통한 페이지별 접근 관리 기능(이후 refresh로 변경예정), 브라우저 새로고침할때 토큰 확인하여 로그인 유지시키는 기능, 로그인 모달 및 회원가입 모달 => 페이지로 변경.
 
 #### 23/04/08
 <img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> LoginForm, SignUpForm -> container, presenter 구조로 변경
+
+#### 23/04/09
+<img src="./public/images/sh.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 회원가입 기능, 페이지 추가
+
+#### 23/04/11
+<img src="./public/images/yr.jpeg" style="width:24px; height:24px; border-radius: 50%;"> 테스팅을 위한 Jest를 셋업했습니다.
