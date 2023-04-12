@@ -41,7 +41,7 @@ export default function AnimalList(props: IAnimalFilterProps) {
       title: "동물 종류",
       dataIndex: "kindCd",
       key: "kindCd",
-      width: 100,
+      width: 200,
     },
     {
       title: "상태",
@@ -74,7 +74,7 @@ export default function AnimalList(props: IAnimalFilterProps) {
     },
   ];
 
-  const data: IAnimalListDataType[] = animalData.map((datum) => {
+  const data: IAnimalListDataType[] = animalData?.map((datum) => {
     return (({
       desertionNo,
       popfile,
@@ -96,9 +96,9 @@ export default function AnimalList(props: IAnimalFilterProps) {
 
   useEffect(() => {
     void axios.get(baseURL).then((response) => {
-      setTotalPageCount(response.data.response?.body.totalCount);
-      console.log(response.data.response.body.items.item);
-      setAnimalData(response.data.response.body.items.item);
+      setTotalPageCount(response.data.response?.body?.totalCount);
+      console.log(response.data.response?.body?.items.item);
+      setAnimalData(response.data.response?.body?.items.item);
     });
     window.scrollTo(0, 0);
   }, [currentPage, props.appliedFilter]);
