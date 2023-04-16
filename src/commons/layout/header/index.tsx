@@ -47,18 +47,18 @@ export default function LayoutHeader() {
           alignItems: "center",
         }}
       >
-        <Link href="/"><h1 style={{cursor: "pointer"}}>유기동물보호센터</h1></Link>
+        <Link href="/"><a><h1 style={{cursor: "pointer"}}>유기동물보호센터</h1></a></Link>
         <div>
           {info
             ? (
               <>
                 <Button style={{marginRight: "0.5rem"}} onClick={onClickLogout}>로그아웃</Button>
-                <Link href="/"><Button>마이페이지</Button></Link>
+                <Link href="/mypage"><Button>마이페이지</Button></Link>
               </> 
             ) : (
               <>
-                <Link href="/login"><Button style={{marginRight: "0.5rem"}}>로그인</Button></Link>
-                <Link href="/signup"><Button>회원가입</Button></Link>
+                <Link href="/login"><a><Button style={{marginRight: "0.5rem"}}>로그인</Button></a></Link>
+                <Link href="/signup"><a><Button>회원가입</Button></a></Link>
               </>
             )
           }
