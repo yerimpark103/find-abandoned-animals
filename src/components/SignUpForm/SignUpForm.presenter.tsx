@@ -8,7 +8,7 @@ export default function SignUpFormUI(props: any) {
       <Form onFinish={props.isEdit ? props.onClickUpdate : props.onClickSubmit} style={{padding: 10}}>
         {props.isEdit ? <h1>마이페이지</h1> : <h1>회원가입 페이지</h1>}
         <div>
-          <label htmlFor="user-email">아이디</label>
+          <label htmlFor="user-email">이메일</label>
           <br />
           {props.isEdit
             ? (
