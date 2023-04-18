@@ -1,6 +1,7 @@
 import {message} from "antd";
 import {useRouter} from "next/router";
 import AnimalDetailUI from "./AnimalDetail.presenter";
+import { useEffect } from "react";
 
 export default function AnimalDetail() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function AnimalDetail() {
     
             const map = new window.kakao.maps.Map(container, options);
             const geocoder = new window.kakao.maps.services.Geocoder();
-            geocoder.addressSearch(`${props.animal.careAddr}`, function(result: any, status: any) {
+            geocoder.addressSearch(`${animal.careAddr}`, function(result: any, status: any) {
 
                 // 정상적으로 검색이 완료됐으면 
                  if (status === window.kakao.maps.services.Status.OK) {
@@ -47,7 +48,7 @@ export default function AnimalDetail() {
             
                     // 인포윈도우로 장소에 대한 설명을 표시합니다
                     const infowindow = new window.kakao.maps.InfoWindow({
-                        content: `<div style="width:200px;text-align:center;padding:6px 0;">${props.animal.careNm}</div>`
+                        content: `<div style="width:200px;text-align:center;padding:6px 0;">${animal.careNm}</div>`
                     });
                     infowindow.open(map, marker);
             
