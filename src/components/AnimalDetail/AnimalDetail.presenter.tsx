@@ -7,6 +7,7 @@ import {
   AnimalDetailImg,
   AnimalDetailText,
   AnimalDetailTextContainer,
+  KakaoMap,
   PhoneNumber,
 } from "./AnimalDetail.styles";
 import {Container} from "../Common/common.styles";
@@ -16,7 +17,6 @@ import {
   convertAnimalSexCdToString,
   convertAnimalNeuterYnToString,
 } from "@/util/animalDataFormatter";
-import { useEffect } from "react";
 import Head from "next/head";
 
 interface AnimalDetailUIProps {
@@ -100,7 +100,7 @@ export default function AnimalDetailUI(props: AnimalDetailUIProps) {
           </AnimalDetailTextContainer>
         </AnimalDetailContainer>
       </AnimalDetailCard>
-      <div id="map" style={{width:"1037px", height:"300px"}}></div>
+      <KakaoMap id="map"></KakaoMap>
     </Container>
   );
 }

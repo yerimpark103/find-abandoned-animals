@@ -20,10 +20,10 @@ export default function AnimalDetail() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=141b72fe32f28ea40df3efa0ab78ecc4"
+    script.src = "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=141b72fe32f28ea40df3efa0ab78ecc4&libraries=services"
     document.head.appendChild(script);
 
-    script.onload = () => {
+    script.onload = async () => {
         window.kakao.maps.load(function() {
             const container = document.getElementById('map');
             const options = {
@@ -58,7 +58,7 @@ export default function AnimalDetail() {
               });    
             })
           };
-        }, [])
+        })
   return (
     <>
       <AnimalDetailUI
