@@ -3,7 +3,7 @@ import SignupForm from "@/components/SignUpForm/SignUpForm.container";
 import { gql, useQuery } from "@apollo/client";
 import { useEffect } from "react";
 
-const FETCH_USER_LOGGED_IN = gql`
+export const FETCH_USER_LOGGED_IN = gql`
     query fetchUserLoggedIn {
         fetchUserLoggedIn {
             email

@@ -1,8 +1,9 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import {useEffect, useState} from "react";
+import { useState } from "react";
 import SignUpFormUI from "./SignUpForm.presenter";
 import { CREATE_USER, UPDATE_USER } from "./SignUpForm.query";
+import { FETCH_USER_LOGGED_IN } from "../../../pages/mypage/index";
 
 export default function SignupForm(props: any) {
   // 필요한 기능 : 로그인시 해당 페이지 접속 불가하게
@@ -69,7 +70,7 @@ export default function SignupForm(props: any) {
 
   const onClickUpdate = async () => {
 
-    // 엡데이트 정보가 안들어왔을 경우 에러처리
+    // 업데이트 정보가 안들어왔을 경우 에러처리
     const updateUserInput = {};
     if (name !== "") updateUserInput.name = name;
     // 사진변경 추가하기
@@ -78,10 +79,11 @@ export default function SignupForm(props: any) {
       const result = await updateUser({
         variables: {
           updateUserInput,
-        }
+        },
+        refetchQueries: [{query: FETCH_USER_LOGGED_IN }]
       });
       alert('수정이 완료되었습니다.')
-    
+      setName("")
     } catch (error) {
       alert(error);
     }

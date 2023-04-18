@@ -37,6 +37,7 @@ export default function SignUpFormUI(props: any) {
                 <Input
                   name="user-name"
                   placeholder={props.data?.fetchUserLoggedIn.name}
+                  value={props.name}
                   onChange={props.onChangeName}
                   required
                 />
