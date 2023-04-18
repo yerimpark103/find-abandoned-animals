@@ -33,6 +33,7 @@ export default function AnimalDetail() {
     
             const map = new window.kakao.maps.Map(container, options);
             const geocoder = new window.kakao.maps.services.Geocoder();
+            console.log(animal.careAddr)
             geocoder.addressSearch(`${animal.careAddr}`, function(result: any, status: any) {
 
                 // 정상적으로 검색이 완료됐으면 
@@ -58,7 +59,7 @@ export default function AnimalDetail() {
               });    
             })
           };
-        })
+        }, [])
   return (
     <>
       <AnimalDetailUI
