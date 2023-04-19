@@ -1,22 +1,15 @@
-import { gql, useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import {useState} from "react";
+import { useState } from "react";
 import SignUpFormUI from "./SignUpForm.presenter";
+import { CREATE_USER, UPDATE_USER } from "./SignUpForm.query";
+import { FETCH_USER_LOGGED_IN } from "../../../pages/mypage/index";
 
-const CREATE_USER = gql`
-  mutation createUser($createUserInput: CreateUserInput!){
-    createUser(createUserInput: $createUserInput) {
-      _id
-      name
-      email
-    }
-  }
-`
-
-export default function SignupForm() {
+export default function SignupForm(props: any) {
   // 필요한 기능 : 로그인시 해당 페이지 접속 불가하게
   const router = useRouter();
   const [createUser] = useMutation(CREATE_USER);
+  const [updateUser] = useMutation(UPDATE_USER);
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -75,6 +68,27 @@ export default function SignupForm() {
     }
   };
 
+  const onClickUpdate = async () => {
+
+    // 업데이트 정보가 안들어왔을 경우 에러처리
+    const updateUserInput = {};
+    if (name !== "") updateUserInput.name = name;
+    // 사진변경 추가하기
+
+    try {
+      const result = await updateUser({
+        variables: {
+          updateUserInput,
+        },
+        refetchQueries: [{query: FETCH_USER_LOGGED_IN }]
+      });
+      alert('수정이 완료되었습니다.')
+      setName("")
+    } catch (error) {
+      alert(error);
+    }
+  }
+
   return (
     <SignUpFormUI
         email={email}
@@ -89,6 +103,9 @@ export default function SignupForm() {
         termError={termError}
         onChangeTerm={onChangeTerm}
         onClickSubmit={onClickSubmit}
+        onClickUpdate={onClickUpdate}
+        isEdit={props.isEdit}
+        data={props.data}
     />
   );
 }

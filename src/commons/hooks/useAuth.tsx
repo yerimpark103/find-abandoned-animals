@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-export const withAuth = (Component: any) => (props: any) => {
+export function useAuth() {
     const router = useRouter();
 
     useEffect(() => {
@@ -10,6 +10,4 @@ export const withAuth = (Component: any) => (props: any) => {
             void router.push("/");
         }; 
     }, []);
-
-    return <Component {...props} />
 }
