@@ -59,7 +59,7 @@ export default function AnimalDetail() {
               });    
             })
           };
-        }, [])
+        })
   return (
     <>
       <AnimalDetailUI
