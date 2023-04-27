@@ -1,22 +1,10 @@
-import {message} from "antd";
 import {useRouter} from "next/router";
-import AnimalDetailUI from "./AnimalDetail.presenter";
+import AnimalMapUI from "./MapView.presenter";
 import { useEffect } from "react";
 
-export default function AnimalDetail() {
+export default function AnimalMap() {
   const router = useRouter();
   const animal = {...router.query};
-
-  const handleClickPhoneNumber = (phoneNumber: string | any) => {
-    if (typeof window !== "undefined") {
-      void navigator.clipboard.writeText(phoneNumber);
-      void message.success("전화번호를 복사했습니다.");
-    }
-  };
-
-  const handleClickGoBackRoute = () => {
-    router.back();
-  };
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -62,10 +50,8 @@ export default function AnimalDetail() {
         })
   return (
     <>
-      <AnimalDetailUI
+      <AnimalMapUI
         animal={animal}
-        handleClickPhoneNumber={handleClickPhoneNumber}
-        handleClickGoBackRoute={handleClickGoBackRoute}
       />
     </>
   );
