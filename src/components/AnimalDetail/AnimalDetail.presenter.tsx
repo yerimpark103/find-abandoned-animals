@@ -7,6 +7,7 @@ import {
   AnimalDetailImg,
   AnimalDetailText,
   AnimalDetailTextContainer,
+  KakaoMap,
   PhoneNumber,
 } from "./AnimalDetail.styles";
 import {Container} from "../Common/common.styles";
@@ -16,6 +17,7 @@ import {
   convertAnimalSexCdToString,
   convertAnimalNeuterYnToString,
 } from "@/util/animalDataFormatter";
+import Head from "next/head";
 
 interface AnimalDetailUIProps {
   animal: any;
@@ -26,6 +28,12 @@ interface AnimalDetailUIProps {
 export default function AnimalDetailUI(props: AnimalDetailUIProps) {
   return (
     <Container>
+      <Head>
+        <script 
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=141b72fe32f28ea40df3efa0ab78ecc4&libraries=services"
+        ></script>
+      </Head>
       <Breadcrumb
         items={[
           {
@@ -92,6 +100,7 @@ export default function AnimalDetailUI(props: AnimalDetailUIProps) {
           </AnimalDetailTextContainer>
         </AnimalDetailContainer>
       </AnimalDetailCard>
+      <KakaoMap id="map"></KakaoMap>
     </Container>
   );
 }

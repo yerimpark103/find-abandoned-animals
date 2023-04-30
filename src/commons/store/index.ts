@@ -9,3 +9,13 @@ export const accessTokenState = atom({
   key: "accessTokenState",
   default: "",
 })
+
+export const mapState = atom({
+  key: "mapState",
+  default: "",
+})
+
+export const placeName = atom({
+  key: "placeName",
+  default: "",
+})
